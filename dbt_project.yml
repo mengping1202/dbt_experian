@@ -1,0 +1,24 @@
+name: dbt_experian
+
+profile: dbt_experian
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  dbt-experian:
+    +schema: raw
+
+models:
+  dbt-experian:
+    staging:
+    # parse large json string
+      +materialized: table
+    intermediate:
+      +materialized: table

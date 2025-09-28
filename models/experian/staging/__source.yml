@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: experian
+    schema: raw
+    description: Experian response data
+    tables:
+      - name: RegisteredCompanyCredit
+        description: One record per response of /v2/registeredcompanycredit/{RegNumber}
