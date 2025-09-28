@@ -1,0 +1,303 @@
+## dbt-experian
+
+This package provides reusable dbt models that transform raw [Experian Commercial Credit API](https://developer.experian.com/products/uk/commercial-credit/commercial-credit-api-docs#) data into clean, well-structured tables for analytics and reporting.
+
+### Features
+
+- Standardised staging models for Experian API responses
+- Core models to simplify analysis of companies, credit data, and related attributes
+- Easy integration into existing dbt projects
+
+<details><summary>📌 Data Coverage Checklist</summary>
+  
+  - [ ] BusinessOwnerSearchReq
+  - [ ] BusinessOwnerRequest
+  - [ ] BusinessDetail
+  - [ ] InputLocationDetail
+  - [ ] Control
+  - [x] Accounts
+  - [ ] Administrator
+  - [ ] Administrators
+  - [ ] Alerts
+  - [ ] Appointment
+  - [ ] ArrayOfString
+  - [ ] ArrayOfString1
+  - [ ] ArrayOfString2
+  - [ ] ArrayOfString3
+  - [x] Auditor
+  - [x] BalanceSheet
+  - [x] Bank
+  - [x] CCJLtdDetail
+  - [x] CCJLtd
+  - [x] CCLLtdDetail
+  - [x] CCLLtd
+  - [x] CRO
+  - [x] CROChanges
+  - [x] Cashflow
+  - [x] LtdCommercialDelphi
+  - [x] LtdCommercialDelphiHistory
+  - [x] CommercialDetail
+  - [x] CommissionDetails
+  - [ ] CommonTerms
+  - [ ] CompDebitMonthly
+  - [ ] CompRcvrAppnt
+  - [ ] CompRcvrCessation
+  - [x] CompanyHistory
+  - [ ] CompanyOwnership
+  - [ ] ConvictionDetails
+  - [ ] CorporateShareholder
+  - [ ] CorporateStructure
+  - [ ] CreditorsDetails
+  - [ ] CurrentDirectors
+  - [ ] CurrentSecretary
+  - [ ] CustomDate
+  - [x] DebtorsDetails
+  - [ ] Dimissal
+  - [ ] DirectorDetails
+  - [ ] DirectorExpandedSummary
+  - [ ] DirectorNumbers
+  - [ ] DirectorRemunerationDetails
+  - [ ] Directors
+  - [ ] Discharge
+  - [ ] DisclosureItems
+  - [ ] DiscontinuedOperations
+  - [ ] EmployeeRemunerationDetails
+  - [ ] Error
+  - [ ] ExecutorDetails
+  - [ ] FilingDetails
+  - [x] FinancialAssetsCurrentDetails
+  - [x] FinancialAssetsNonCurrentDetails
+  - [x] FinancialLiabilitiesDetails
+  - [x] Financials
+  - [ ] ForgnSubsidiaries
+  - [ ] FullQuartiles
+  - [ ] HeaderInfo
+  - [ ] LtdIdentification
+  - [ ] IndDebitMonthly
+  - [ ] InstrHolder
+  - [ ] InterestPayableDetails
+  - [ ] InventoriesDetails
+  - [ ] InvestmentAssetsDetails
+  - [ ] IssuedCapitalDetails
+  - [ ] LegalNotices
+  - [ ] LenderDetails
+  - [ ] LimitedCompanyCAISMembersSummary
+  - [ ] LimitedCompanyCAISPortfolioSummary
+  - [ ] LimitedCompanyCIFAS
+  - [ ] LimitedCompanyCIFASDetails
+  - [ ] LimitedCompanyCIFASSummary
+  - [ ] LimitedCompanyDelphiDirector
+  - [ ] LimitedCompanyDelphiPayment
+  - [ ] LimitedCompanyDelphiRisk
+  - [ ] LimitedCompanyDelphiCAIS
+  - [ ] Liquidator
+  - [ ] Liquidators
+  - [ ] Location
+  - [ ] LongTermFinancialLiabilitiesDetails
+  - [ ] LtdBusinessLocation
+  - [ ] LtdCompanyCAIS
+  - [ ] LtdCompanyCAISDetails
+  - [ ] CommercialCAISDirector
+  - [ ] CommercialCaisLocationDetail
+  - [ ] LtdCompanyCAISSummary
+  - [ ] LtdCompanyData
+  - [ ] MMDD
+  - [ ] ManagementInfo
+  - [ ] MedianQuartiles
+  - [ ] MeetingCreditors
+  - [ ] LtdMonthlyData
+  - [ ] MortgageDetail
+  - [ ] Mortgages
+  - [ ] NOCDetail
+  - [ ] NameDetls
+  - [ ] NaturePartialSatisfaction
+  - [ ] Notes
+  - [ ] Notice6253
+  - [ ] NoticeOfCorrection
+  - [ ] Order
+  - [ ] OtherCurrentAssetsDetails
+  - [ ] OtherCurrentLiabilitiesDetails
+  - [ ] OtherNonCurrentAssetsDetails
+  - [ ] OtherNonCurrentLiabilitiesDetails
+  - [ ] ParentDetail
+  - [ ] ParentName
+  - [ ] LtdPaymentFull
+  - [ ] LtdPaymentPerformance
+  - [ ] PercentageChange
+  - [ ] Petition
+  - [ ] Petitioners
+  - [ ] PrevCRO
+  - [ ] PrevDirectorDetails
+  - [ ] PrevName
+  - [ ] PrevSearchSICInfo
+  - [ ] LtdPrevSearches
+  - [ ] PreviousAddresses
+  - [ ] PreviousDirectors
+  - [ ] PreviousNames
+  - [ ] PreviousSearchDetail
+  - [ ] PreviousSecretary
+  - [ ] ProfitLoss
+  - [ ] ProvisionsDetails
+  - [ ] Quartiles
+  - [ ] Ratios
+  - [ ] RcvrAppntData
+  - [ ] RcvrCsstnData
+  - [ ] Receiver
+  - [ ] ReceiverAppointment
+  - [ ] ReceiverCessation
+  - [ ] Resolution
+  - [ ] SICInfo1980
+  - [ ] SICInfo1992
+  - [ ] SICInfo80
+  - [ ] SICInfo92
+  - [ ] ScoreHistory
+  - [ ] LtdScoringData
+  - [ ] SecCommercialDetail
+  - [ ] Secretaries
+  - [ ] SecretaryDetails
+  - [ ] SectorRanking
+  - [ ] SectorScore
+  - [ ] Sectors
+  - [ ] ShareCapital
+  - [ ] ShareHolderNameDetls
+  - [ ] ShareHoldersLocation
+  - [ ] SharehldrsDetails
+  - [ ] Shareholder
+  - [ ] Shareholders
+  - [ ] Shareholdings
+  - [ ] Solicitors
+  - [ ] Subsidiaries
+  - [ ] SummaryLine
+  - [ ] Supervisors
+  - [ ] TangibleAssetsDetails
+  - [ ] LtdThomsonData
+  - [ ] TotalCashDetails
+  - [ ] TradeNames
+  - [ ] TradingNameDetails
+  - [ ] TrusteeDetails
+  - [ ] TurnOverSalesDetails
+  - [ ] UKSubsidiaries
+  - [ ] UnpaidAccountsDetails
+  - [ ] VolArrangement
+  - [ ] WindUp
+  - [ ] Address
+  - [ ] CommDetail
+  - [ ] CommDetailsRegNumber
+  - [ ] ConvDetail
+  - [ ] DetailDirectorCIFAS
+  - [ ] DirDetail
+  - [ ] DirPreviousAddr
+  - [ ] DirectorData
+  - [ ] Directorships
+  - [ ] IndvDirConvData
+  - [ ] IndvDirCurrDirectorship
+  - [ ] IndvDirCurrDisslvdDirectorship
+  - [ ] IndvDirPrevDirectorship
+  - [ ] IndvDirPrevDisslvdDirectorship
+  - [ ] IndvDirPrevName
+  - [ ] IndvSecCurrDisslvdSecData
+  - [ ] IndvSecCurrSecData
+  - [ ] IndvSecPrevDisslvdSecData
+  - [ ] IndvSecPrevSecData
+  - [ ] OutputDirLocationDetail
+  - [ ] OutputNameDetail
+  - [ ] Secretaryships
+  - [ ] SummaryDirectorCIFAS
+  - [ ] Supplier
+  - [ ] AbbreviatedPaymentPerformanceDetails
+  - [ ] AddressResolutionOutput
+  - [ ] AllCAISSummary
+  - [ ] ArrayOfCCLDetail
+  - [ ] Bankruptcies
+  - [ ] BankruptcyDetails
+  - [ ] BusinessLink
+  - [ ] BusinessLinks
+  - [ ] CCJNonLtdDetails
+  - [ ] CCJNonLtd
+  - [ ] CCLDetail
+  - [ ] CIFASDetails
+  - [ ] CIFASIndicator
+  - [ ] CIFASSummary
+  - [ ] CPSNonLtdSICInfo
+  - [ ] CheckReturnLocation
+  - [ ] CheckedAddressField
+  - [ ] CommercialCAISScore
+  - [ ] CommercialDelphi
+  - [ ] CommonTerm
+  - [ ] ConsumerCreditLicenceSummary
+  - [ ] Contacts
+  - [ ] CurrentAddress
+  - [ ] Date
+  - [ ] DebitMonthly
+  - [ ] DelphiHistoryAndScore
+  - [ ] FaxDetails
+  - [ ] Identification
+  - [ ] Individual
+  - [ ] IndividualResponse
+  - [ ] JudgmentDetails
+  - [ ] MonthlyData
+  - [ ] NonLimitedCompanyCIFAS
+  - [ ] NonLtdBusinessData
+  - [ ] NonLtdBusinessLocation
+  - [ ] NonLtdCAISAccountDetail
+  - [ ] CAISProprietor
+  - [ ] NonLtdParentLocation
+  - [ ] NonLtdPreviousLocation
+  - [ ] NonLtdScoreHistory
+  - [ ] OwnCAISSummary
+  - [ ] PaymentPerformance
+  - [ ] PaymentPerformanceFullDetails
+  - [ ] PaymentSummary
+  - [ ] PrevSearchDetail
+  - [ ] PrevSearches
+  - [ ] ReturnLocation
+  - [ ] ScoringData
+  - [ ] TelephoneDetails
+  - [ ] ThomsonData
+  - [ ] TimeAt
+  - [ ] TradeNameDetail
+  - [ ] Warning
+  - [ ] BusinessOwnerDetailsResponse
+  - [ ] AddressLinkBlock
+  - [ ] AssociationSegment
+  - [ ] InputNameDetail
+  - [ ] BucketBlocks
+  - [ ] BusinessOwnerReport
+  - [ ] BusinessOwnerText
+  - [ ] CAISSegment
+  - [ ] CIFAS
+  - [ ] DateRegLeft
+  - [ ] DirectorshipInformationBlock
+  - [ ] GoneAwaySegment
+  - [ ] HomeTelephoneNumber
+  - [ ] LocationDetail
+  - [ ] MatchDetail
+  - [ ] Member
+  - [ ] NoticeOfCorrectionSummaryBlock
+  - [ ] PreviousApplication
+  - [ ] PublicInformation
+  - [ ] SuccessfulTraceSegment
+  - [ ] TimeInEmployment
+  - [ ] TimeInEmploymentDetails
+  - [ ] VotersRollPersonSegment
+  - [ ] VotersRollStreetSegment
+  - [ ] BusinessTargeterResponse
+  - [ ] OutputLocation
+  - [ ] SICInfo
+  - [ ] SearchResults
+  - [ ] SearchSummary
+  - [ ] DirSearchSummary
+  - [ ] BusinessLocation
+  - [ ] ArrayOfStringLR
+  - [ ] DirectorTargeterResponse
+  - [ ] DirectrSelectionList
+  - [ ] DirSelectDetail
+  - [ ] DirSelectOutLocationDetail
+  - [ ] FullNameDetail
+  - [ ] LocalityResolution
+  - [ ] ErrorResponse
+
+</details>
+
+### Data Lineage
+<img width="2349" height="1183" alt="image" src="https://github.com/user-attachments/assets/e51bb57b-a189-430c-87b2-721a1339d781" />
